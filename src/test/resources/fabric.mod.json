@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "launchargstest",
+  "version": "${version}",
+
+  "name": "Launch Args Test",
+  "authors": [
+    "Crosby"
+  ],
+
+  "license": "MIT",
+
+  "environment": "client",
+  "entrypoints": {
+    "preLaunch": [
+      "io.github.racoondog.test.LaunchArgsTest"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.12",
+    "fabric-api": "*",
+    "minecraft": ">=1.19",
+    "java": ">=17"
+  }
+}
