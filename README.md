@@ -21,6 +21,23 @@ public void onPreLaunch() {
 }
 ```
 
+```groovy
+repositories {
+    maven {
+        url "https://repo.repsy.io/mvn/ggcrosby/launchargsapi"
+    }
+}
+
+dependencies {
+  modImplementation("io.github.racoondog:LaunchArgsAPI:1.0.0") {
+    transitive = false
+  }
+  include("io.github.racoondog:LaunchArgsAPI:1.0.0") {
+    transitive = false
+  }
+}
+```
+
 ## Difference between LaunchArgsAPI and `FabricLoader.getLaunchArguments`
 Parsing custom launch arguments from `FabricLoader.getLaunchArguments()` doesn't remove the "Completely ignored arguments" message
 

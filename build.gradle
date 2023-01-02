@@ -52,5 +52,14 @@ publishing {
 
 	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {
+		maven {
+			name = "repsy-maven"
+			url = "https://repo.repsy.io/mvn/ggcrosby/launchargsapi"
+
+			credentials {
+				username System.getenv("LARGSAPI_REPSY_USERNAME")
+				password System.getenv("LARGSAPI_REPSY_PASSWORD")
+			}
+		}
 	}
 }
