@@ -21,9 +21,15 @@
     "launchargsapi.mixins.json"
   ],
 
+  "custom": {
+    "modmenu": {
+      "badges": ["library"]
+    }
+  },
+
   "depends": {
     "fabricloader": ">=0.12",
-    "fabric-api": "*",
+    "fabric-api-base": "*",
     "minecraft": ">=1.19",
     "java": ">=17"
   }

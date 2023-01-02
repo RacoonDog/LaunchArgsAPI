@@ -21,7 +21,7 @@ public void onPreLaunch() {
 }
 ```
 
-## Difference between LauchArgsAPI and `FabricLoader.getLaunchArguments`
+## Difference between LaunchArgsAPI and `FabricLoader.getLaunchArguments`
 Parsing custom launch arguments from `FabricLoader.getLaunchArguments()` doesn't remove the "Completely ignored arguments" message
 
 ## Minecraft launch argument documentation
@@ -64,7 +64,7 @@ Since I couldn't find this anywhere else...
 - `--demo`: Enables demo mode if present
 - `--bonusChest`: Enables bonus chest if present
 - `--forceUpgrade`: Forcibly runs datafixers on world if present
-- `--eraseCache`: If present, erase cache (Heightmaps, Lightmaps) during world upgrade, only has an effect if `--forceUpgrade` is present
+- `--eraseCache`: If present, erase cache (Heightmaps, Lightmaps) during world upgrade, only has an effect if `forceUpgrade` is present
 - `--safeMode`: Loads level with vanilla datapack only if present
 - `--help`: Prints commands, then quits
 - `--singleplayer`: `String`
@@ -74,3 +74,5 @@ Since I couldn't find this anywhere else...
 - `--serverId`: `String`
 - `--jfrProfile`
 - `nogui`: Disables gui if present
+
+Thanks unascribed for helping me understand some launch arguments
