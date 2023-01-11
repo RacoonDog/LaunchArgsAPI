@@ -10,7 +10,8 @@
   ],
   "contact": {
     "sources": "https://github.com/RacoonDog/LaunchArgsAPI",
-    "issues": "https://github.com/RacoonDog/LaunchArgsAPI/issues"
+    "issues": "https://github.com/RacoonDog/LaunchArgsAPI/issues",
+    "discord": ""
   },
 
   "license": "MIT",

@@ -1,24 +1,22 @@
 package io.github.racoondog.test;
 
 import com.mojang.logging.LogUtils;
-import io.github.racoondog.launchargsapi.api.Events;
-import joptsimple.OptionSpecBuilder;
-import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
+import io.github.racoondog.launchargsapi.api.ArgsListener;
+import joptsimple.OptionParser;
+import joptsimple.OptionSet;
+import joptsimple.OptionSpec;
 import org.slf4j.Logger;
-
-import java.util.concurrent.atomic.AtomicReference;
-
-public class LaunchArgsTest implements PreLaunchEntrypoint {
-    Logger LOG = LogUtils.getLogger();
+public class LaunchArgsTest implements ArgsListener {
+    private static final Logger LOG = LogUtils.getLogger();
+    private OptionSpec<Void> optionSpec;
 
     @Override
-    public void onPreLaunch() {
-        AtomicReference<OptionSpecBuilder> optionSpec = new AtomicReference<>();
+    public void createSpecs(OptionParser optionParser) {
+        optionSpec = optionParser.accepts("someArg");
+    }
 
-        Events.CREATE_SPECS.register(optionParser -> optionSpec.set(optionParser.accepts("someArg")));
-
-        Events.PARSE_ARGS.register(optionSet -> {
-            if (optionSet.has(optionSpec.get())) LOG.info("Found argument!");
-        });
+    @Override
+    public void parseArgs(OptionSet optionSet) {
+        if (optionSet.has(optionSpec)) LOG.info("Found argument!");
     }
 }
