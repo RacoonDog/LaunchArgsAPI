@@ -1,4 +1,4 @@
-# Launch Args API
+a# Launch Args API
 A Fabric library that provides common hooks to access Minecraft launch arguments
 
 ## Usage
@@ -9,15 +9,19 @@ Gives you access to [joptsimple](https://github.com/jopt-simple/jopt-simple) `Op
 Gives you access to [joptsimple](https://github.com/jopt-simple/jopt-simple) `OptionSet` object
 
 ```java
-@Override
-public void onPreLaunch() {
-    AtomicReference<OptionSpecBuilder> optionSpec = new AtomicReference<>();
+public class LaunchArgsTest implements ArgsListener {
+    private static final Logger LOG = LogUtils.getLogger();
+    private OptionSpec<Void> optionSpec;
 
-    Events.CREATE_SPECS.register(optionParser -> optionSpec.set(optionParser.accepts("someArg")));
+    @Override
+    public void createSpecs(OptionParser optionParser) {
+        optionSpec = optionParser.accepts("someArg");
+    }
 
-    Events.PARSE_ARGS.register(optionSet -> {
-        if (optionSet.has(optionSpec.get())) System.out.println("Found argument!");
-    });
+    @Override
+    public void parseArgs(OptionSet optionSet) {
+        if (optionSet.has(optionSpec)) LOG.info("Found argument!");
+    }
 }
 ```
 
