@@ -33,10 +33,10 @@ repositories {
 }
 
 dependencies {
-  modImplementation("io.github.racoondog:LaunchArgsAPI:1.0.0") {
+  modImplementation("io.github.racoondog:LaunchArgsAPI:1.1.0") {
     transitive = false
   }
-  include("io.github.racoondog:LaunchArgsAPI:1.0.0") {
+  include("io.github.racoondog:LaunchArgsAPI:1.1.0") {
     transitive = false
   }
 }
