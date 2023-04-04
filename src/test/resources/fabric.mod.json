@@ -12,7 +12,7 @@
 
   "environment": "client",
   "entrypoints": {
-    "preLaunch": [
+    "argsListener": [
       "io.github.racoondog.test.LaunchArgsTest"
     ]
   },

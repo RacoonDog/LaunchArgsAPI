@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Environment(EnvType.SERVER)
-@Mixin(Main.class)
+@Mixin(value = Main.class, remap = false)
 public abstract class ServerMainMixin {
     @ModifyVariable(method = "main([Ljava/lang/String;)V", at = @At("STORE"))
     private static OptionParser hookOptionParser(OptionParser optionParser) {
