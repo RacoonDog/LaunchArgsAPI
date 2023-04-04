@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Environment(EnvType.CLIENT)
 @Mixin(value = Main.class, remap = false)
 public abstract class ClientMainMixin {
-    @ModifyVariable(method = "main([Ljava/lang/String;Z)V", at = @At("STORE"))
+    @ModifyVariable(method = "main([Ljava/lang/String;)V", at = @At("STORE"))
     private static OptionParser hookOptionParser(OptionParser optionParser) {
         for (var entrypointContainer : FabricLoader.getInstance().getEntrypointContainers("argsListener", ArgsListener.class)) {
             entrypointContainer.getEntrypoint().createSpecs(optionParser);
@@ -22,7 +22,7 @@ public abstract class ClientMainMixin {
         return optionParser;
     }
 
-    @ModifyVariable(method = "main([Ljava/lang/String;Z)V", at = @At("STORE"))
+    @ModifyVariable(method = "main([Ljava/lang/String;)V", at = @At("STORE"))
     private static OptionSet hookOptionSet(OptionSet optionSet) {
         for (var entrypointContainer : FabricLoader.getInstance().getEntrypointContainers("argsListener", ArgsListener.class)) {
             entrypointContainer.getEntrypoint().parseArgs(optionSet);
