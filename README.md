@@ -28,17 +28,14 @@ public class LaunchArgsTest implements ArgsListener {
 ```groovy
 repositories {
     maven {
-        url "https://repo.repsy.io/mvn/ggcrosby/launchargsapi"
+        name = "meteor-maven"
+        url = "https://maven.meteordev.org/releases"
     }
 }
 
 dependencies {
-  modImplementation("io.github.racoondog:LaunchArgsAPI:1.1.0") {
-    transitive = false
-  }
-  include("io.github.racoondog:LaunchArgsAPI:1.1.0") {
-    transitive = false
-  }
+  modImplementation "io.github.racoondog:LaunchArgsAPI:1.1.3"
+  include "io.github.racoondog:LaunchArgsAPI:1.1.3"
 }
 ```
 

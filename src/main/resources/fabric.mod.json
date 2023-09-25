@@ -4,14 +4,14 @@
   "version": "${version}",
 
   "name": "Launch Args API",
-  "description": "Common hooks to access Minecraft launch arguments.",
+  "description": "Common API to access Minecraft launch arguments.",
   "authors": [
     "Crosby"
   ],
   "contact": {
     "sources": "https://github.com/RacoonDog/LaunchArgsAPI",
     "issues": "https://github.com/RacoonDog/LaunchArgsAPI/issues",
-    "discord": ""
+    "discord": "https://discord.gg/4RBmBCFSTc"
   },
 
   "license": "MIT",
@@ -30,7 +30,6 @@
 
   "depends": {
     "fabricloader": ">=0.12",
-    "fabric-api-base": "*",
     "minecraft": ">=1.19.4",
     "java": ">=17"
   }
